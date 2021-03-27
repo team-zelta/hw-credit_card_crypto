@@ -32,7 +32,9 @@ describe 'Test hashing requirements' do
       it 'it Check that each card produces the same hash' do
         cards.map do |cc|
           hash1 = cc.hash
+          puts hash1
           hash2 = cc.hash
+          puts hash2
           _(hash1).wont_be_nil
           _(hash2).wont_be_nil
           _(hash1).must_equal hash2
@@ -43,7 +45,7 @@ describe 'Test hashing requirements' do
     describe 'Check for unique hashes' do
       # TODO: Check that each card produces a different hash than other cards
       it 'Check that each card produces a different hash' do
-        puts cards.map(&:hash).uniq.length.must_equal(cards.length)
+        cards.map(&:hash).uniq.length.must_equal(cards.length)
       end
     end
   end
