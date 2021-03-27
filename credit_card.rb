@@ -2,7 +2,6 @@
 
 require_relative './luhn_validator'
 require 'json'
-require 'base64'
 
 # CreditCard
 class CreditCard
