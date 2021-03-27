@@ -2,6 +2,7 @@
 
 require_relative './luhn_validator'
 require 'json'
+require "base64"
 
 # CreditCard
 class CreditCard
@@ -36,11 +37,13 @@ class CreditCard
 
   # return a new CreditCard object given a serialized (JSON) representation
   def self.from_s(card_s)
+    Base64.decode64(card_s)
     # TODO: deserializing a CreditCard object
   end
 
   # return a hash of the serialized credit card object
   def hash
+    Base64.encode64(to_s).hash
     # TODO: implement this method
     #   - Produce a hash (using default hash method) of the credit card's
     #     serialized contents.
