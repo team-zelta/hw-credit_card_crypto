@@ -16,7 +16,6 @@ module DoubleTranspositionCipher
     # 3. shuffle matrix based on given key
     matrix_shuffled = shuffle_matrix(matrix: text_matrix, key: key)
     # 4. return joined cyphertext
-    # matrix_shuffled.flatten.join.delete('*')
     matrix_shuffled.flatten.join
   end
 
